@@ -1,0 +1,31 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "failing",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/cmake-build-unix",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "successful",
+      "generator": "MinGW Makefiles",
+      "binaryDir": "${sourceDir}/cmake-build-mingw",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "failing",
+      "configurePreset": "failing"
+    },
+    {
+      "name": "successful",
+      "configurePreset": "successful"
+    }
+  ]
+}
